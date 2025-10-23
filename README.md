@@ -1,10 +1,8 @@
 # Skill Assessment - 2: Numerical Methods in Python
-
 ## NAME: MARKANDEYAN GOKUL
 ## ROLL NO: 212224240086
 
-
-## This collection includes implementations for the following numerical methods:
+### This collection includes implementations for the following numerical methods:
 -  Newton's Raphson Method 
 -  Gauss seidel Method 
 -  Newton's Forward and Backward Interpolation 
@@ -13,9 +11,9 @@
 -  Runge Kutta Method
 
 ### Prerequisites
-Python: Python 3.7 or newer
-Libraries: numpy, matplotlib
-Knowledge: Basic understanding of numerical methods (root finding, interpolation, solving ODEs).
+**Python**: Python 3.7 or newer  
+**Libraries:** numpy, matplotlib  
+**Knowledge:** Basic understanding of numerical methods (root finding, interpolation, solving ODEs).  
 
 ## Installation and Setup
 
@@ -47,29 +45,30 @@ Example: Running the Runge Kutta's Method
 ```bash
 python runge_kutta.py
 ```
-## The Result of the statistical test will be printed on terminal.
+##### The Result of the Program will be printed on terminal.  
+
+
 
 # 1.Newton's Raphson Method
 ## Aim:
 To find a real root of a non-linear equation using the Newton-Raphson iterative method.
 
 ## Problem Statement:
-Find a root of the equation f(x) = x^3 - x - 1 = 0, which is accurate to four decimal places.
+Find a root of the equation f(x) = x^3 - x - 1 = 0, which is accurate to four decimal places.  
 We will start with an initial guess of x0 = 1.0.
 
-### Algorithm:
-1. Define the function f(x) = x^3 - x - 1
-2. Define the derivative of the function g(x) = f'(x) = 3x^2 - 1
-3. Choose an initial guess (x0) and a tolerable error (e).
-4. Start the iteration:
-5. Calculate x1 = x0 - f(x0) / g(x0)
-6. Check if abs(x1 - x0) is less than the tolerable error e.
-7. If yes, x1 is the root. Stop.
-8. If no, set x0 = x1 and repeat from step 5.
+### Algorithm:  
+1. Define the function f(x) = x^3 - x - 1  
+2. Define the derivative of the function g(x) = f'(x) = 3x^2 - 1  
+3. Choose an initial guess (x0) and a tolerable error (e).  
+4. Start the iteration:  
+5. Calculate x1 = x0 - f(x0) / g(x0)  
+6. Check if abs(x1 - x0) is less than the tolerable error e.  
+7. If yes, x1 is the root. Stop.  
+8. If no, set x0 = x1 and repeat from step 5.  
 
 ### Program
 ```python
-
 import math
 
 def f(x):
@@ -134,33 +133,32 @@ if __name__ == "__main__":
         print("The method did not converge to a root.")
 ```
 ### Output:
-
+<img width="906" height="381" alt="image" src="https://github.com/user-attachments/assets/a59a6f94-edcc-4427-88c8-19209baf9eea" />
 
 
 # 2.Gauss seidel Method
-## Aim:
+## Aim:  
 To solve a system of linear equations using the Gauss-Seidel iterative method.
 ## Problem Statement:
 Solve the following system of linear equations:
 10x +  y +  z = 12
- x + 10y +  z = 12
- x +  y + 10z = 12
+x + 10y +  z = 12
+x +  y + 10z = 12
 Start with an initial guess of x=0, y=0, z=0.
 
 ### Algorithm:
-# 1. Arrange the system of equations into a diagonally dominant form (if possible).
-# 2. Express each variable from one equation (e.g., x from eq1, y from eq2, z from eq3).
-#    x = (12 - y - z) / 10
-#    y = (12 - x - z) / 10
-#    z = (12 - x - y) / 10
-# 3. Start with an initial guess [x, y, z] = [0, 0, 0].
-# 4. In each iteration, calculate the new value for x, y, and z using the *most recent*
-#    values of the other variables.
-#    x_new = (12 - y_old - z_old) / 10
-#    y_new = (12 - x_new - z_old) / 10  <-- Uses x_new
-#    z_new = (12 - x_new - y_new) / 10  <-- Uses x_new and y_new
-# 5. Repeat until the solution converges (i.e., the change between iterations
-#    is below a specified tolerance).
+ 1. Arrange the system of equations into a diagonally dominant form (if possible).
+ 2. Express each variable from one equation (e.g., x from eq1, y from eq2, z from eq3).  
+    x = (12 - y - z) / 10  
+    y = (12 - x - z) / 10  
+    z = (12 - x - y) / 10  
+ 3. Start with an initial guess [x, y, z] = [0, 0, 0].  
+ 4. In each iteration, calculate the new value for x, y, and z using the *most recent*  
+    values of the other variables.  
+    x_new = (12 - y_old - z_old) / 10  
+    y_new = (12 - x_new - z_old) / 10  <-- Uses x_new  
+    z_new = (12 - x_new - y_new) / 10  <-- Uses x_new and y_new  
+ 5. Repeat until the solution converges (i.e., the change between iterations  is below a specified tolerance).  
 
 
 ### Program
@@ -233,34 +231,34 @@ if __name__ == "__main__":
         print(f"The exact solution is x=1, y=1, z=1.")
     else:
         print("The method did not converge.")
-
 ```
 ### Output:
-
-
+<img width="887" height="524" alt="image" src="https://github.com/user-attachments/assets/96e7ff49-31d1-4438-9c31-5b4cd975e081" />
 
 # 3.Newton's Forward and Backward Interpolation
 ## Aim:
-To estimate the value of a function at a specific point using
-# Newton's forward and backward difference interpolation formulas.
+To estimate the value of a function at a specific point using  
+ Newton's forward and backward difference interpolation formulas.  
+ 
 ## Problem Statement:
-Given the following data table of (x, y) points:
-# x: 0, 1, 2, 3
-# y: 1, 2, 4, 7
-# 1. Use Newton's Forward Interpolation to find y(0.5) (near the start).
-# 2. Use Newton's Backward Interpolation to find y(2.5) (near the end).
+Given the following data table of (x, y) points:  
+ x: 0, 1, 2, 3  
+ y: 1, 2, 4, 7  
+1. Use Newton's Forward Interpolation to find y(0.5) (near the start).  
+2. Use Newton's Backward Interpolation to find y(2.5) (near the end).  
 
 ### Algorithm:
- 1. Create a set of n data points (x, y).
-# 2. Generate the difference table.
-# 3. For Forward Interpolation (estimating near the start of the table):
-#    a. Calculate 'u' = (value - x[0]) / (x[1] - x[0])
-#    b. Apply the formula:
-#       y_val = y[0] + u*delta_y[0] + (u*(u-1)/2!)*delta_2_y[0] + ...
-# 4. For Backward Interpolation (estimating near the end of the table):
-#    a. Calculate 'u' = (value - x[n-1]) / (x[1] - x[0])
-#    b. Apply the formula:
-#       y_val = y[n-1] + u*nabla_y[n-1] + (u*(u+1)/2!)*nabla_2_y[n-1] + ...
+1. Create a set of n data points (x, y).  
+2. Generate the difference table.  
+3. For Forward Interpolation (estimating near the start of the table):  
+   a. Calculate 'u' = (value - x[0]) / (x[1] - x[0])  
+   b. Apply the formula:  
+ y_val = y[0] + u*delta_y[0] + (u*(u-1)/2!)*delta_2_y[0] + ...  
+ 4. For Backward Interpolation (estimating near the end of the table):  
+   a. Calculate 'u' = (value - x[n-1]) / (x[1] - x[0])  
+   b. Apply the formula:  
+  y_val = y[n-1] + u*nabla_y[n-1] + (u*(u+1)/2!)*nabla_2_y[n-1] + ...  
+
 ### Program
 ```python
 import numpy as np
@@ -368,29 +366,32 @@ if __name__ == "__main__":
     print(f"2. Using Newton's backward interpolation, the estimated value at x=2.5 is {result_backward:.4f}.")
 ```
 ### Output:
+<img width="969" height="699" alt="image" src="https://github.com/user-attachments/assets/2bc9944d-235e-42b3-b903-8a0dc4348b21" />
 
 # 4.Lagranges Interpolation
 ## Aim:
-# To find a polynomial that passes through a given set of points and
-# estimate the value of the function at a new point using Lagrange interpolation.
+ To find a polynomial that passes through a given set of points and  
+ estimate the value of the function at a new point using Lagrange interpolation.
 ## Problem Statement:
-Given the following data table of (x, y) points:
-# x: 0, 1, 3
-# y: 1, 3, 55
-# (These points lie on the polynomial y = 6x^3 - 8x + 3. Let's pretend we don't know this.)
-# Use Lagrange's Interpolation to find the value of y when x = 2.
+Given the following data table of (x, y) points:  
+ x: 0, 1, 3  
+ y: 1, 3, 55  
+ (These points lie on the polynomial y = 6x^3 - 8x + 3. Let's pretend we don't know this.)  
+ Use Lagrange's Interpolation to find the value of y when x = 2.  
+ 
 ### Algorithm:
-# 1. Create a set of n data points (x_data, y_data).
-# 2. Define the point 'value' at which to interpolate.
-# 3. Initialize the interpolated result 'y_val' to 0.
-# 4. Loop for i from 0 to n-1 (for each point):
-#    a. Initialize the Lagrange basis polynomial 'L_i' to 1.
-#    b. Loop for j from 0 to n-1:
-#       i. If i is not equal to j:
-#          L_i = L_i * (value - x_data[j]) / (x_data[i] - x_data[j])
-#    c. Add the weighted value to the total:
-#       y_val = y_val + y_data[i] * L_i
-# 5. Return 'y_val'.
+ 1. Create a set of n data points (x_data, y_data).
+ 2. Define the point 'value' at which to interpolate.
+ 3. Initialize the interpolated result 'y_val' to 0.
+ 4. Loop for i from 0 to n-1 (for each point):
+    a. Initialize the Lagrange basis polynomial 'L_i' to 1.
+    b. Loop for j from 0 to n-1:
+       i. If i is not equal to j:
+          L_i = L_i * (value - x_data[j]) / (x_data[i] - x_data[j])
+    c. Add the weighted value to the total:
+       y_val = y_val + y_data[i] * L_i
+ 5. Return 'y_val'.
+  
 ### Program
 ```python
 import numpy as np
@@ -445,27 +446,28 @@ if __name__ == "__main__":
     print("The interpolation is exact, as expected for a polynomial.")
 ```
 ### Output:
+<img width="988" height="345" alt="image" src="https://github.com/user-attachments/assets/59904a71-8716-4450-939b-ec8cd4c3d260" />
 
 # 5.Euler' s Method
 ## Aim:
-To find the numerical solution of a first-order ordinary differential
-# equation (ODE) with a given initial value using Euler's method.
+To find the numerical solution of a first-order ordinary differential  
+ equation (ODE) with a given initial value using Euler's method.
 
 ## Problem Statement:
-Given the ODE: dy/dx = x + y
-# With the initial condition: y(0) = 1
-# Find the approximate value of y(1) using Euler's method with a step size h = 0.1.
+Given the ODE: dy/dx = x + y  
+ With the initial condition: y(0) = 1  
+ Find the approximate value of y(1) using Euler's method with a step size h = 0.1.  
 
 ### Algorithm:
-1. Define the function f(x, y) = x + y.
-# 2. Set initial values x0 = 0, y0 = 1.
-# 3. Set step size h = 0.1 and target x_target = 1.
-# 4. Calculate the number of steps: n = (x_target - x0) / h.
-# 5. Start iteration from i = 0 to n-1:
-#    a. Calculate y_next = y_current + h * f(x_current, y_current)
-#    b. Calculate x_next = x_current + h
-#    c. Set y_current = y_next, x_current = x_next
-# 6. The final y_next is the approximation for y(1).
+1. Define the function f(x, y) = x + y.  
+ 2. Set initial values x0 = 0, y0 = 1.  
+ 3. Set step size h = 0.1 and target x_target = 1.  
+ 4. Calculate the number of steps: n = (x_target - x0) / h.  
+ 5. Start iteration from i = 0 to n-1:  
+    a. Calculate y_next = y_current + h * f(x_current, y_current)  
+    b. Calculate x_next = x_current + h  
+    c. Set y_current = y_next, x_current = x_next  
+ 6. The final y_next is the approximation for y(1).  
 
 ### Program
 ```python
@@ -552,31 +554,38 @@ if __name__ == "__main__":
     print("\nPlot saved as 'euler_method_plot.png'")
 ```
 ### Output:
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/08455c02-3aee-4afd-a590-2894580c0715" />
+
+### Result:
+<img width="901" height="625" alt="image" src="https://github.com/user-attachments/assets/c910a272-153e-43cc-bf0c-ccd9aec4394e" />
 
 # 6.Runge Kutta Method
 ## Aim:
-To find a more accurate numerical solution of a first-order ODE
-# with a given initial value using the 4th Order Runge-Kutta (RK4) method.
-## Problem Statement:
-Given the ODE: dy/dx = x + y
-# With the initial condition: y(0) = 1
-# Find the approximate value of y(1) using the RK4 method with a step size h = 0.1.
-# (This is the same problem as the Euler's method for comparison).
+To find a more accurate numerical solution of a first-order ODE  
+with a given initial value using the 4th Order Runge-Kutta (RK4) method.  
+
+## Problem Statement:  
+Given the ODE: dy/dx = x + y  
+ With the initial condition: y(0) = 1  
+ Find the approximate value of y(1) using the RK4 method with a step size h = 0.1.  
+ (This is the same problem as the Euler's method for comparison).  
+ 
 ### Algorithm:
-1. Define the function f(x, y) = x + y.
-# 2. Set initial values x0 = 0, y0 = 1, h = 0.1, and x_target = 1.
-# 3. Calculate the number of steps: n = (x_target - x0) / h.
-# 4. Start iteration from i = 0 to n-1:
-#    a. Calculate the four "k" values:
-#       k1 = h * f(x_i, y_i)
-#       k2 = h * f(x_i + h/2, y_i + k1/2)
-#       k3 = h * f(x_i + h/2, y_i + k2/2)
-#       k4 = h * f(x_i + h, y_i + k3)
-#    b. Calculate the next y-value:
-#       y_next = y_current + (1/6) * (k1 + 2*k2 + 2*k3 + k4)
-#    c. Calculate x_next = x_current + h
-#    d. Set y_current = y_next, x_current = x_next
-# 5. The final y_next is the approximation for y(1).
+1. Define the function f(x, y) = x + y.  
+ 2. Set initial values x0 = 0, y0 = 1, h = 0.1, and x_target = 1.  
+ 3. Calculate the number of steps: n = (x_target - x0) / h.  
+ 4. Start iteration from i = 0 to n-1:  
+    a. Calculate the four "k" values:  
+       k1 = h * f(x_i, y_i)  
+       k2 = h * f(x_i + h/2, y_i + k1/2)  
+       k3 = h * f(x_i + h/2, y_i + k2/2)  
+       k4 = h * f(x_i + h, y_i + k3)  
+    b. Calculate the next y-value:  
+       y_next = y_current + (1/6) * (k1 + 2*k2 + 2*k3 + k4)  
+    c. Calculate x_next = x_current + h  
+    d. Set y_current = y_next, x_current = x_next  
+ 5. The final y_next is the approximation for y(1).  
+    
 ### Program
 ```python
 import numpy as np
@@ -668,12 +677,13 @@ if __name__ == "__main__":
     print("\nPlot saved as 'runge_kutta_plot.png'")
 ```
 ### Output:
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/6832f06d-d46b-40bb-9361-4a1c13913567" />
+
+### Result:
+<img width="879" height="625" alt="image" src="https://github.com/user-attachments/assets/5883d61e-a5e5-4d89-b09f-6bba033b431f" />
 
 
-
-## The Result of the statistical test will be printed on terminal.
-
-###Conclusion 
+### Conclusion 
 In this Skill Assessment, we implemented various numerical methods using Python,
 including root-finding, solving linear systems, interpolation, and ODE solvers.
 
@@ -683,4 +693,3 @@ including root-finding, solving linear systems, interpolation, and ODE solvers.
 • Euler and Runge-Kutta methods provided numerical ODE solutions, with RK4 giving higher precision.
 
 The implementations demonstrate the efficiency and versatility of Python in computational mathematics.
-
