@@ -92,7 +92,7 @@ Follow these steps to set up the local environment.
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/gokul2736/STATISTICS-SA-2
-cd STATISTICS-SA-1
+cd STATISTICS-SA-2
 ```
 
 ### 2. Create and Activate a Virtual Environment
