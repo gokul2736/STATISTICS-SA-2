@@ -5,12 +5,12 @@
 
 
 ## This collection includes implementations for the following numerical methods:
-- 1. Python program for Newton's Raphson Method 
-- 2. Python program for Gauss seidel Method 
-- 3. Python program for Newton's Forward and Backward Interpolation 
-- 4. Python program for Lagranges Interpolation 
-- 5. Python program for Euler' s Method
-- 6. Python program for Runge Kutta Method
+- 1. Newton's Raphson Method 
+- 2. Gauss seidel Method 
+- 3. Newton's Forward and Backward Interpolation 
+- 4. Lagranges Interpolation 
+- 5. Euler' s Method
+- 6. Runge Kutta Method
 
 ### Prerequisites
 Python: Python 3.7 or newer
@@ -61,7 +61,7 @@ python runge_kutta.py
 
 
 
-# 1.Newton's Raphson Method
+# 2.Gauss seidel Method
 ## Aim:
 ### Algorithm:
 ### Program
@@ -70,7 +70,7 @@ python runge_kutta.py
 ```
 ### Output:
 
-# 1.Newton's Raphson Method
+# 3.Newton's Forward and Backward Interpolation
 ## Aim:
 ### Algorithm:
 ### Program
@@ -79,7 +79,7 @@ python runge_kutta.py
 ```
 ### Output:
 
-# 1.Newton's Raphson Method
+# 4.Lagranges Interpolation
 ## Aim:
 ### Algorithm:
 ### Program
@@ -88,7 +88,7 @@ python runge_kutta.py
 ```
 ### Output:
 
-# 1.Newton's Raphson Method
+# 5.Euler' s Method
 ## Aim:
 ### Algorithm:
 ### Program
@@ -97,7 +97,7 @@ python runge_kutta.py
 ```
 ### Output:
 
-# 1.Newton's Raphson Method
+# 6.Runge Kutta Method
 ## Aim:
 ### Algorithm:
 ### Program
@@ -110,7 +110,7 @@ python runge_kutta.py
 
 ## The Result of the statistical test will be printed on terminal.
 
---- Conclusion ---
+###Conclusion 
 In this Skill Assessment, we implemented various numerical methods using Python,
 including root-finding, solving linear systems, interpolation, and ODE solvers.
 
